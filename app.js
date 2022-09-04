@@ -180,7 +180,7 @@ function listtasks(tasks = [], tasksList)
       <input type="checkbox" data-index=${i} id="task${i}" ${
           task.completed ? "checked" : ""
         } />
-      <label for="task${i}"><span>{${task.date}/&nbsp;
+      <label for="task${i}"><span>{${task.date}
         }</span>&nbsp${task.text}</label>
         <button class="delete" data-index=${i} id="delete${i}"><i class="far fa-trash-alt"></i></button>
     </li>
