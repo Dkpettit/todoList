@@ -19,7 +19,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: #b07966;
+  background: slateblue;
 }
 
 .container {
@@ -34,6 +34,13 @@ h2 {
   font-family: 'Lobster', cursive;
   text-align: center;
   font-weight: 400;
+}
+
+.task {
+  width: 63%;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
 }
 
 .tasks {
@@ -58,25 +65,6 @@ h2 {
   margin-right: 12px;
 }
 
-.tasks input {
-  display: none;
-}
-
-.tasks input + label:before {
-  content: "+";
-  margin-right: 12px;
-}
-
-.tasks input + label span {
-  font-weight: bold;
-  font-size: 0.75rem;
-}
-
-.tasks input:checked + label {
-  text-decoration: line-through;
-  color: lightgrey;
-}
-
 .tasks button {
   padding-left: 30px;
   background: none;
@@ -96,19 +84,6 @@ h2 {
   border-bottom: 2px solid black;
 }
 
-.add-task input {
-  padding: 10px;
-  width: 15vw;
-  margin: 5px;
-  outline: 0;
-  border: 0;
-}
-
-.add-task select {
-  border-radius: 10px;
-  border: none;
-}
-
 .frequency {
   width: 100%;
   display: flex;
@@ -120,11 +95,13 @@ h2 {
 .date-picker {
   position: relative;
   background-color: #fff;
+  width: 300px;
+  text-align: center;
+  border-radius: 10px;
   margin: 30px auto;
   box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
   cursor: pointer;
-  user-select: none;  
-  
+  user-select: none;    
 }
 
 .date-picker:hover {
@@ -133,7 +110,7 @@ h2 {
 
 .date-picker .selected-date {
   height: 100%;
-  width: 15vw;
+  width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -198,3 +175,215 @@ h2 {
   background-color: #00CA85;
 
 }
+
+.button {
+  background-color: slateblue;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 15px 32px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+@media (max-width: 996px){
+  .container {
+    margin-top: 25px;
+    padding: 20px;
+    background-color: #FF8A63;
+    border-radius: 15px;
+  }
+  
+  h2 {
+    
+    font-family: 'Lobster', cursive;
+    text-align: center;
+    font-weight: 400;
+  }  
+  
+  .tasks {
+    text-align: left;
+    list-style: none;
+  }
+  
+  .tasks li {
+    border-bottom: 1px solid gray;
+    padding: 10px;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+  }
+  
+  .tasks label {
+    flex: 1;
+    cursor: pointer;
+  }
+  
+  .tasks input {
+    margin-right: 12px;
+  }
+  
+  .tasks input {
+    display: none;
+  }
+  
+  .tasks input + label:before {
+    content: "+";
+    margin-right: 12px;
+  }
+  
+  .tasks input + label span {
+    font-weight: bold;
+    font-size: 0.75rem;
+  }
+  
+  .tasks input:checked + label {
+    text-decoration: line-through;
+    color: lightgrey;
+  }
+  
+  .tasks button {
+    padding-left: 30px;
+    background: none;
+    margin: 5px;
+    outline: 0;
+    border: 0;
+    border-radius: 10px;
+  }
+  
+  .add-task {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid black;
+  }
+  
+  .add-task input {
+    padding: 10px;
+    width: 63%;
+    margin: 5px;
+    outline: 0;
+    border: 0;
+  }
+  
+  .add-task select {
+    border-radius: 10px;
+    border: none;
+  }
+  
+  .frequency {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    flex-direction: row;
+  }
+  
+  .date-picker {
+    position: relative;
+    background-color: #fff;
+    width: 300px;
+    text-align: center;
+    border-radius: 10px;
+    margin: 30px auto;
+    box-shadow: 0px 3px 10px rgba(0,0,0,0.2);
+    cursor: pointer;
+    user-select: none;   
+  }
+  
+  .date-picker:hover {
+    background-color: #f3f3f3;
+  }
+  
+  .date-picker .selected-date {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+    font-size: 18px;
+    border-radius: 100px;
+  }
+  
+  .date-picker .dates {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #fff;
+  }
+  
+  .date-picker .dates.active {
+    display: block;
+  }
+  
+  .date-picker .dates .month {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid #EEE;
+  }
+  
+  .date-picker .dates .month .arrows {
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    color: #313131;
+    font-size: 20px;
+  }
+  
+  .date-picker .dates .month .arrows:hover {
+    background-color: #F3F3F3;
+  }
+  
+  .date-picker .dates .month .arrows:active {
+    background-color: #00CA85;
+  }
+  
+  .date-picker .dates .days {
+    height: 200px;
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+  
+  }
+  
+  .date-picker .dates .days .day {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #313131;
+  
+  }
+  
+  .date-picker .dates .days .day.selected {
+    background-color: #00CA85;
+  
+  }
+
+  .button {
+    background-color: slateblue;
+    border-radius: 10px;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+  }
+  
+}
+
+

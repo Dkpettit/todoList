@@ -17,37 +17,38 @@
   </head>
   <body>
     <div class="image_container"><img src="./img/undraw_reminder_re_fe15.svg" width="50%" height="50%"></div>
-    <div class="container">
-      <h2>My Todo List</h2>
-      <p></p>
-      <form class="add-task">
-        <input
-          class="task"
-          type="text"
-          name="task"
-          placeholder="Enter Task Name"
-          required
-        /> 
-        <div class="date-picker">
-          <div class="selected-date"></div>
-          <div class="dates">
-            <div class="month">
-              <div class="arrows prev-mth">&lt;</div>
-              <div class="mth"></div>
-              <div class="arrows next-mth">&gt;</div>
+      <div class="container">
+        <h2>My Todo List</h2>
+        <p></p>
+        <form class="add-task">
+          <input
+            class="task"
+            type="text"
+            name="task"
+            placeholder="Enter Task Name"
+            required
+          /> 
+          <div class="date-picker">
+            <div class="selected-date"></div>
+            <div class="dates">
+              <div class="month">
+                <div class="arrows prev-mth">&lt;</div>
+                <div class="mth"></div>
+                <div class="arrows next-mth">&gt;</div>
+              </div>
+    
+              <div class="days"></div>
             </div>
-  
-            <div class="days"></div>
           </div>
-        </div>
-        
-        <input type="submit" value="+ Add Task" />
-      </form>
-
-      <ul class="tasks">
-        <li>Loading...</li>        
-      </ul>
-    </div>
+          
+          <Button class="button" type="submit">Add Task</Button>
+        </form>
+  
+        <ul class="tasks">
+          <li>Loading...</li>        
+        </ul>
+      </div>
+    
 <a href='https://pngtree.com/so/notepad'>notepad png from pngtree.com/</a>
     <script src="./app.js"></script>    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

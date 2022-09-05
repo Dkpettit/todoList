@@ -161,7 +161,6 @@ function addTask(e)
     {
         date: selected_date_element.textContent,
         text: text,
-        completed: false,
     };               
     tasks.push(task);
     listtasks(tasks, tasksList);
@@ -174,39 +173,14 @@ function listtasks(tasks = [], tasksList)
 {
     tasksList.innerHTML = tasks.map((task, i) =>
     {
-
         return `
         <li>
-      <input type="checkbox" data-index=${i} id="task${i}" ${
-          task.completed ? "checked" : ""
-        } />
-      <label for="task${i}"><span>{${task.date}/&nbsp;
+      <label for="task${i}"><span>{${task.date}
         }</span>&nbsp${task.text}</label>
         <button class="delete" data-index=${i} id="delete${i}"><i class="far fa-trash-alt"></i></button>
     </li>
        `; 
     }).join('');
-}
-// toggle if complete
-function toggleCompleted(e)
-{
-    if (!e.target.matches("input")) return;
-    const el = e.target;
-    const index = el.dataset.index;
-
-    ++tasks[index].reps;
-    
-    if (tasks[index].reps === tasks[index].totalCount)
-    {
-        tasks[index].completed = true;
-    }
-    else if (tasks[index].reps > tasks[index].totalCount)
-    {
-        tasks[index].reps = 0;
-        tasks[index].completed = false;
-    }
-    listtasks(tasks, tasksList);
-    localStorage.setItem("tasks", JSON.stringify(tasks));
 }
 
 // delete task
@@ -232,12 +206,10 @@ function checkEventPathForClass(path, selector){
     return false;
 }
 
-
 //EVENT LISTENERS
 date_picker_element.addEventListener('click', toggleDatePicker);
 next_mth_element.addEventListener('click', goToNextMonth);
 prev_mth_element.addEventListener('click', goToPrevMonth);
 addTasks.addEventListener('submit', addTask);
-tasksList.addEventListener('click', toggleCompleted);
 tasksList.addEventListener('click', deletetask);
 listtasks(tasks, tasksList);
