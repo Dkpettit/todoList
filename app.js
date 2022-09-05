@@ -175,6 +175,12 @@ function listtasks(tasks = [], tasksList)
     {
         return `
         <li>
+<<<<<<< HEAD
+=======
+      <input type="checkbox" data-index=${i} id="task${i}" ${
+          task.completed ? "checked" : ""
+        } />
+>>>>>>> 050768f75e6d5abac89fe797a9ffd72f74ad0e01
       <label for="task${i}"><span>{${task.date}
         }</span>&nbsp${task.text}</label>
         <button class="delete" data-index=${i} id="delete${i}"><i class="far fa-trash-alt"></i></button>
