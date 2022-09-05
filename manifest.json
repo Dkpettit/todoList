@@ -4,8 +4,8 @@
   "theme_color": "#de9ed0",
   "background_color": "#b621f3",
   "display": "standalone",
-  "scope": "dkpettit.github.io/todoList",
-  "start_url": "dkpettit.github.io/todoList",
+  "scope": "dkpettit.github.io/todoList/index.html",
+  "start_url": "dkpettit.github.io/todoList/index.html",
 "icons": [
     {
         "src": "./img/maskable_icon.png",
